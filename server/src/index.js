@@ -5,8 +5,16 @@ const api = require('./routes/hello');
 
 app.use('/api', api);
 
-app.get('/hello', function(req, res) {
-  res.json({data:"hello, client from index.js"});
+app.get('/helloJSON', function(req, res) {
+  res.json({data:"hello, client from res.json()"});
+});
+
+app.get('/helloSendString', function(req, res) {
+  res.send("hello client from res.send(string)");
+});
+
+app.get('/helloSendObject', function(req, res) {
+  res.send({data:"hello client from res.send(Object)"});
 });
 
 
